@@ -102,6 +102,20 @@
 </center>
 
 <script>
+    function transliterate(text) {
+        var map = {
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
+            'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
+            'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f',
+            'х': 'h', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'sht', 'ъ': 'a',
+            'ь': 'y', 'ю': 'yu', 'я': 'ya'
+        };
+
+        return text.split('').map(function(char) {
+            return map[char] || char;
+        }).join('');
+    }
+
     window.onload = function() {
         var fname = localStorage.getItem("bg_fname") || "Иван";
         var mname = localStorage.getItem("bg_mname") || "Иванов";
@@ -110,8 +124,8 @@
         var fullName = fname + " " + mname + " " + lname;
         document.getElementById("student_full_name").innerText = fullName;
 
-        var cleanFname = fname.replace(/\s+/g, '').toLowerCase();
-        var cleanLname = lname.replace(/\s+/g, '').toLowerCase();
+        var cleanFname = transliterate(fname.toLowerCase().trim());
+        var cleanLname = transliterate(lname.toLowerCase().trim());
         
         var email = cleanFname + cleanLname + "@tu-sofia.bg";
 

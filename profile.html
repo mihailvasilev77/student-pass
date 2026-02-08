@@ -1,0 +1,125 @@
+<html lang="bg">
+<head>
+    <title>ТУ - София, "Е-Студент"</title>
+    <link type="image/x-icon" href="https://tu-sofia.bg/img/TU_Logo.png" rel="icon">
+    <link type="image/x-icon" href="https://tu-sofia.bg/img/TU_Logo.png" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;">
+    
+    <script src="https://e-university.tu-sofia.bg/ETUS/wz_tooltip.js"></script>
+    
+<center>
+    <table style="border-bottom: solid black 1px">
+        <tbody>
+            <tr>
+                <td><img src="https://e-university.tu-sofia.bg/ETUS/Tu-sofia-logo.png" alt="Лого ТУ" width="70"></td>
+                <th>
+                    <h1 style="line-height: 0.85; margin-top: 0px;margin-bottom: 5px">Технически университет - София</h1>
+                    <h2 style="margin-top: 0px; margin-bottom: 0px">"Е-Студент"</h2>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+    <table cellspacing="0" cellpadding="0" width="100%">
+        <tbody>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                
+                <td style="width: 95%" align="center">
+                    <span id="student_full_name" style="font-weight: bold; font-size: 1.2em;">Зареждане...</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp; 
+                    <input type="button" value="Изход" onclick="history.back()" style="line-height: 1; border-radius: 0.3rem; background-color: red; color: white; cursor: pointer;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    
+    <div id="desk">
+        [ <u style="cursor: pointer; color: blue;">Информация</u> ] 
+        [ <u style="cursor: pointer; color: blue;">Здравно осигуряване</u> ] 
+        [ <u style="cursor: pointer; color: blue;">Заверки и оценки</u> ] 
+        [ <u style="cursor: pointer; color: blue;">Спорт</u> ] 
+        [ <u style="cursor: pointer; color: blue;">Стипендии</u> ] 
+        [ <u style="cursor: pointer; color: blue;">Общежития</u> ] 
+        [ <u style="cursor: pointer; color: blue;">Плащания</u> ] 
+        [ <u style="cursor: pointer; color: blue;">Идентификация</u> ]
+    </div>
+    
+    <p></p>
+
+    <table cellspacing="5" id="info">
+        <tbody>
+            <tr>
+                <td align="right"><b>ОКС:</b></td><td>Бакалавър</td>
+                <td align="right"><b>Състояние:</b></td><td>Първоначално записване</td>
+            </tr>
+            <tr>
+                <td align="right"><b>Фак. номер:</b></td><td>121224138</td>
+                <td align="right"><b>Записан семестър:</b></td><td>4</td>
+            </tr>
+            <tr>
+                <td align="right"><b>Факултет:</b></td><td>Факултет компютърни системи и технологии</td>
+                <td align="right"><b>Заверен семестър:</b></td><td>3</td>
+            </tr>
+            <tr>
+                <td align="right"><b>Специалност:</b></td><td>Компютърно и софтуерно инженерство</td>
+                <td align="right"><b>Поток:</b></td><td>9</td>
+            </tr>
+            <tr>
+                <td align="right"><b>Вид обучение:</b></td><td>редовно</td>
+                <td align="right"><b>Личен e-mail:</b></td><td>sexbog34@abv.bg</td>
+            </tr>
+            <tr>
+                <td align="right"><b>Група:</b></td><td>45</td>
+                <td align="right"><b>Имейл в ТУ - София:</b></td>
+                <td>
+                    <a id="generated_email_link" href="#" target="_blank">loading...</a>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"><b>Вид прием:</b></td><td>Държавна поръчка</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div align="justify" style="margin-top: 20px;">
+        <b>Вашият групов имейл адрес е</b> <u style="font-family: Courier New">fcst-2-bachelor-45@tu-sofia.bg</u>. 
+        Моля, използвайте го за комуникация с Вашите колеги.
+    </div>
+
+    <p><b>Хронология на студентското състояние</b></p>
+    <table border="1" cellspacing="0">
+        <tbody>
+            <tr><th>Курс</th><th>Уч. год.</th><th>Зав. сем.</th><th>Състояние</th><th>Причина</th></tr>
+            <tr><td><center>1</center></td><td>2024/2025</td><td><center></center></td><td>Първоначално записване</td><td>Прием ТУ</td></tr>
+        </tbody>
+    </table>
+
+</center>
+
+<script>
+    window.onload = function() {
+        var fname = localStorage.getItem("bg_fname") || "Иван";
+        var mname = localStorage.getItem("bg_mname") || "Иванов";
+        var lname = localStorage.getItem("bg_lname") || "Иванов";
+
+        var fullName = fname + " " + mname + " " + lname;
+        document.getElementById("student_full_name").innerText = fullName;
+
+        var cleanFname = fname.replace(/\s+/g, '').toLowerCase();
+        var cleanLname = lname.replace(/\s+/g, '').toLowerCase();
+        
+        var email = cleanFname + cleanLname + "@tu-sofia.bg";
+
+        var emailLink = document.getElementById("generated_email_link");
+        emailLink.innerText = email;
+        emailLink.href = "mailto:" + email;
+    };
+</script>
+
+</body>
+</html>

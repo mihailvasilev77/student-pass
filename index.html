@@ -1,0 +1,91 @@
+<html lang="bg">
+<head>
+    <title>ТУ - София, "Е-Студент"</title>
+    <link type="image/x-icon" href="https://tu-sofia.bg/img/TU_Logo.png" rel="icon">
+    <link rel="apple-touch-icon" href="https://tu-sofia.bg/img/TU_Logo.png">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif; }
+        input[type="text"] { padding: 5px; margin: 5px 0; }
+        .btn-login {
+            padding: .5rem 1rem; 
+            font-size: 1.25rem; 
+            line-height: 1; 
+            border-radius: .3rem; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            cursor: pointer;
+        }
+        .btn-login:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <center>
+        <table style="border-bottom: solid black 1px">
+            <tbody>
+                <tr>
+                    <td><img src="https://e-university.tu-sofia.bg/ETUS/Tu-sofia-logo.png" alt="Лого ТУ" width="70"></td>
+                    <th>
+                        <h1 style="line-height: 0.85; margin-top: 0px;margin-bottom: 5px">Технически университет - София</h1>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p></p>
+        <h2>"Е-Студент"</h2>
+
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; display: inline-block; background: #f9f9f9;">
+            <table>
+                <tbody>
+                    <tr>
+                        <td align="right"><label for="fname">Име:</label></td>
+                        <td><input type="text" id="fname" placeholder="Въведете име"></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label for="mname">Презиме:</label></td>
+                        <td><input type="text" id="mname" placeholder="Въведете презиме"></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label for="lname">Фамилия:</label></td>
+                        <td><input type="text" id="lname" placeholder="Въведете фамилия"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br>
+                            <center>
+                                <button onclick="login()" class="btn-login">Вход</button>
+                            </center>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br><br>
+        При проблеми с входа, пишете на <a href="mailto:e-student-support@tu-sofia.bg">e-student-support@tu-sofia.bg</a>.
+        <p><b><a href="#" target="_blank">Наръчник на първокурсника в ТУ - София</a></b></p>
+        
+        © ТУ - София 2013 - 2026.
+    </center>
+
+    <script>
+        function login() {
+            var fname = document.getElementById('fname').value.trim();
+            var mname = document.getElementById('mname').value.trim();
+            var lname = document.getElementById('lname').value.trim();
+
+            if (!fname || !mname || !lname) {
+                alert("Моля, попълнете всички имена!");
+                return;
+            }
+
+            localStorage.setItem("bg_fname", fname);
+            localStorage.setItem("bg_mname", mname);
+            localStorage.setItem("bg_lname", lname);
+            
+            window.location.href = "profile.html"; 
+        }
+    </script>
+</body>
+</html>

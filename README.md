@@ -1,6 +1,6 @@
-# TU-Sofia E-Student Mockup 🎓
+# E-Student Mockup 🎓
 
-This repository contains a lightweight, frontend-only mockup of the "Е-Студент" (E-Student) portal for the Technical University of Sofia (ТУ - София). It uses static HTML, inline CSS, and Vanilla JavaScript to simulate a login process and display a populated student profile.
+This repository contains a lightweight, frontend-only mockup of the "Е-Студент" (E-Student) portal. It uses static HTML, inline CSS, and Vanilla JavaScript to simulate a login process and display a populated student profile.
 
 ## 🚀 Features
 
@@ -22,7 +22,7 @@ Because this project relies entirely on client-side code with no backend or data
 1. Clone this repository to your local machine.
 2. Open the login HTML file directly in any modern web browser (e.g., Chrome, Firefox, Safari).
 3. Enter a First, Middle, and Last name and click **Вход** (Login).
-4. You will be redirected to the profile page, where you can view the hardcoded academic data alongside your dynamically generated `.tu-sofia.bg` email address.
+4. You will be redirected to the profile page, where you can view the hardcoded academic data alongside your dynamically generated email address.
 
 OR you can access it via the link in the description hosted on github pages.
 
